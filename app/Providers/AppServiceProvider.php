@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton('state', fn() => new class {
+            public static int $reqStaticCount = 1;
+            public int $reqCount = 1;
+        });
     }
 
     /**

@@ -17,6 +17,15 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'host' => env('APP_HOST', 'localhost'),
+    'bind' => env('BIND_HOST', '0.0.0.0'),
+    'url' => ($app_url = env('APP_URL', 'http://localhost')),
+    'asset_url' => env('ASSET_URL', 'http://localhost'),
+    'scheme' => env('APP_SCHEME', 'https'),
+    'port' => (int) env('APP_PORT', 80),
+    'ws_port' => (int) env('WS_PORT', 8080),
+    'ws_path' => env('WS_PATH'),
+    'sse_url' => env('SSE_URL', "$app_url/.well-known/mercure"),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +174,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        App\Providers\MercureServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,

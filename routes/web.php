@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+Route::get('app-state', function () {
+    $state = app('state');
+    return [
+        'reqCount' => $state->reqCount++,
+        'reqStaticCount' => $state::$reqStaticCount++,
+        'MAX_REQUESTS' => env('MAX_REQUESTS'),
+        'process_id' => getmypid()
+    ];
 });

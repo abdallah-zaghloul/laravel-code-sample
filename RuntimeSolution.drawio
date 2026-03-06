@@ -1,0 +1,196 @@
+<mxfile host="65bd71144e" pages="5">
+    <diagram name="Legacy PHP Runtimes" id="MOUUmzrwQQ6SUCpn0lEr">
+        <mxGraphModel dx="1198" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-2" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Edge Server:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- App Direct to client&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Load Balancer&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- API gateway&lt;/font&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="20" width="310" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-3" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Behind Server:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- behind Edge Server&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot; size=&quot;3&quot;&gt;- HTTP recommended&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot; size=&quot;3&quot;&gt;(no TLS Handshake)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;&quot; size=&quot;3&quot;&gt;- Forward to Worker&lt;/font&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="307" width="340" height="193" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-8" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.chrome" parent="1" vertex="1">
+                    <mxGeometry x="20" y="69" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-9" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;TLS handshake&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;" parent="1" vertex="1">
+                    <mxGeometry x="156" y="134" width="324" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS :443&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="69" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTP :80&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="220" width="170" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-18" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;FPM&lt;/span&gt;&lt;font size=&quot;3&quot;&gt;:&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;-----------------------&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: medium;&quot;&gt;- Worker Manager:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp; PHP FPM (create Processes)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Worker (Process):&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp; Fast CGI&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="52.5" y="310" width="190" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-19" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;flipH=1;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="242.5" y="380" width="227.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-20" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="27.5" y="520" width="215" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-21" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 24px;&quot;&gt;Laravel App&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="640" width="150" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-22" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;Octane&lt;/span&gt;&lt;font size=&quot;3&quot;&gt;:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;----------------------&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Server Worker Manager:&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: medium; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;port: 8000&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: medium;&quot;&gt;- Worker (Process):&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: medium; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;FrankenPHP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Road Runner&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- State Manger:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font size=&quot;3&quot;&gt;Reset App State&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="529" y="610" width="242" height="242" as="geometry"/>
+                </mxCell>
+                <mxCell id="Ec7DqBxMb0M368oK83Av-23" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Port:8000&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="529" y="501.5" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="j_m2j_x-xCSnaA93LXn3-4" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="615" y="870" width="70" height="87" as="geometry"/>
+                </mxCell>
+                <mxCell id="j_m2j_x-xCSnaA93LXn3-6" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="806" width="70" height="87" as="geometry"/>
+                </mxCell>
+                <mxCell id="NveR5-YClfJIjxuDkHca-1" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Cached Rested Laravel App&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="970" width="245" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="NveR5-YClfJIjxuDkHca-2" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Kill Process&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="12.5" y="910" width="245" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Caddy Runtime" id="bLTkTPSku5cTIKfO0-Cn">
+        <mxGraphModel dx="1198" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-0"/>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-1" parent="a66gYtRBZpHYUHj35g-t-0"/>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-2" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Edge Server:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- App Direct to client&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Load Balancer&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- API gateway&lt;/font&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="460" y="80" width="350" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-3" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Behind Server:&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- behind Load Balancer&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- HTTP recommended&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- all-in-one CaddyFrankenPHP =&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;Built-in PHP Server&lt;br&gt;No worker&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;No Additional Octane Server&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;WS Handling&lt;/font&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="430" y="367" width="377" height="263" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-4" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.chrome" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="30" y="129" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;TLS handshake&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="166" y="194" width="324" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS :443&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="170" y="129" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTP :80&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="540" y="280" width="170" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="a66gYtRBZpHYUHj35g-t-13" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Go Routine&lt;br&gt;Thread&lt;/font&gt;&lt;div&gt;&lt;div style=&quot;text-wrap-mode: wrap;&quot;&gt;&lt;span style=&quot;font-size: medium; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Laravel Reset App State&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: medium;&quot;&gt;using octane as a package&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: wrap;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="458" y="630" width="334" height="229" as="geometry"/>
+                </mxCell>
+                <mxCell id="wUWBYQJ2QxTX6It4hoa_-0" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Cached Rested Laravel App&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="512.5" y="870" width="245" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="J012uBaZDpxxrbqcb7Xd-0" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick" parent="a66gYtRBZpHYUHj35g-t-1" vertex="1">
+                    <mxGeometry x="380" y="7" width="85" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="0vhY98K8IGw5ddB4CtAl" name="WS Runtime">
+        <mxGraphModel dx="1198" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="tl8kn1yIkBw--ZY5YJMc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.271;exitY=0.828;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="wOXoSxmrC4OEufrU1RIY-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="555" y="320"/>
+                            <mxPoint x="166" y="320"/>
+                        </Array>
+                        <mxPoint x="554.5" y="250" as="sourcePoint"/>
+                        <mxPoint x="166" y="445" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tl8kn1yIkBw--ZY5YJMc-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Direct WS Conn&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tl8kn1yIkBw--ZY5YJMc-3" connectable="0" vertex="1">
+                    <mxGeometry x="0.2585" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wOXoSxmrC4OEufrU1RIY-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Edge Server:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- App Direct to client&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Load Balancer&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;- API gateway&lt;/font&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="70" width="350" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="wOXoSxmrC4OEufrU1RIY-2" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.chrome" parent="1" vertex="1">
+                    <mxGeometry x="30" y="119" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="wOXoSxmrC4OEufrU1RIY-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;TLS handshake&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.twoWayArrow;dy=0.65;dx=22;" parent="1" vertex="1">
+                    <mxGeometry x="166" y="184" width="324" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="wOXoSxmrC4OEufrU1RIY-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HTTPS :443&lt;/font&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="119" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="601" y="366"/>
+                            <mxPoint x="255" y="366"/>
+                        </Array>
+                        <mxPoint x="600.8" y="473.79999999999995" as="sourcePoint"/>
+                        <mxPoint x="255" y="426" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="ExZY8LUjod5qIwoRPI-2-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Behind Server:&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: medium; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- CaddyFrankenPHP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&amp;nbsp;Receive at HTTP_PORT:80&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;foward to&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: medium; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;WS_PORT:8080&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="421.5" width="377" height="263" as="geometry"/>
+                </mxCell>
+                <mxCell id="tl8kn1yIkBw--ZY5YJMc-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Laravel PHP Reverb:&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Listen to WS_PORT:8080&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;configured/&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;handled by reactphp event loop&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="430" width="280" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="tl8kn1yIkBw--ZY5YJMc-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.538;entryY=0.152;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="wOXoSxmrC4OEufrU1RIY-1" target="ExZY8LUjod5qIwoRPI-2-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Indirect WS Conn&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="tl8kn1yIkBw--ZY5YJMc-5" connectable="0" vertex="1">
+                    <mxGeometry x="-0.2717" y="2" relative="1" as="geometry">
+                        <mxPoint x="-1" y="-14" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Pros&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="684.5" width="280" height="90" as="geometry">
+                        <mxRectangle x="580" y="670" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-11" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Go Routine Threads&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-10" vertex="1">
+                    <mxGeometry y="30" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Efficient Memory Consumption&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-10" vertex="1">
+                    <mxGeometry y="60" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-14" value="Cons" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="774.5" width="280" height="90" as="geometry">
+                        <mxRectangle x="580" y="670" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Dual Config&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-14" vertex="1">
+                    <mxGeometry y="30" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-16" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Dual Running Processess&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-14" vertex="1">
+                    <mxGeometry y="60" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-22" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Pros&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="580" width="280" height="90" as="geometry">
+                        <mxRectangle x="580" y="670" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-23" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Straight Forward&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-22" vertex="1">
+                    <mxGeometry y="30" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-24" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;One Config&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-22" vertex="1">
+                    <mxGeometry y="60" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-26" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Cons&lt;/font&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="670" width="280" height="60" as="geometry">
+                        <mxRectangle x="580" y="670" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="t6TJ3UUp5XydhQZyDHBd-27" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Slightly Higher Memory Consumption&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="t6TJ3UUp5XydhQZyDHBd-26" vertex="1">
+                    <mxGeometry y="30" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7bdNQJLbc1617T5MkcFa-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.tick" parent="1" vertex="1">
+                    <mxGeometry x="50" y="320" width="85" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
