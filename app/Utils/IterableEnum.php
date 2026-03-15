@@ -1,5 +1,5 @@
 <?php
-namespace App\Traits;
+namespace App\Utils;
 
 use BackedEnum;
 use Illuminate\Database\Eloquent\Model;
@@ -93,7 +93,7 @@ trait IterableEnum
 
     public static function toStrings(string|iterable|null $value = null): ?Collection
     {
-        return static::fromAny($value ?? static::cases(), 'json')?->map?->toString();
+        return static::fromAny($value ?? static::cases())?->map?->toString();
     }
 
 
@@ -360,7 +360,7 @@ trait IterableEnum
         string|iterable $value,
         string $operator = 'or'
     ) {
-        //set() database index start from 1
+        //set() database index start from 1, max values is 62 item
         $bitmask = static::fromAny($value)
             ->map(fn($case) => 1 << static::toCases()->search($case))
             ->implode(' | ');
@@ -369,6 +369,24 @@ trait IterableEnum
             "and" => $query->whereRaw("($column & ($bitmask)) = ($bitmask)"),
             default => $query->whereRaw("($column & ($bitmask)) != 0")
         };
+    }
+
+    /**
+     * @param QueryBuilder|EloquentBuilder $query
+     * @param 'or'| 'and' $operator
+     * @return QueryBuilder|EloquentBuilder
+     */
+    public static function whereMemberOf(
+        $query,
+        string $column,
+        string|iterable $value,
+        string $operator = 'or'
+    ) {
+        static::toStrings($value)->each(fn($enum) => match ($operator) {
+            "and" => $query->whereRaw("'$enum' MEMBER OF($column)"),
+            default => $query->orWhereRaw("'$enum' MEMBER OF($column)")
+        });
+        return $query;
     }
 
 
@@ -421,6 +439,11 @@ trait IterableEnum
                         JSON_SCHEMA_VALID('$json_schema', $column)
                     );"
         );
+    }
+
+    public static function createJsonIndex(string $table, string $column): bool
+    {
+        return DB::statement("CREATE INDEX $column ON $table ((CAST($column->'$[*]' AS CHAR(191) ARRAY)));");
     }
 
     public static function enumConstraint(string $table, string $column): bool

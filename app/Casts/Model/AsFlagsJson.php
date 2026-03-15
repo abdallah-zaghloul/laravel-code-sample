@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Casts;
+namespace App\Casts\Model;
 
 use App\Enums\FlagEnum;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;

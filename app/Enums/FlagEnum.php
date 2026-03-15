@@ -1,11 +1,11 @@
 <?php
 namespace App\Enums;
-use App\Traits\IterableEnum;
+use App\Utils\IterableEnum;
 
-enum FlagEnum
+enum FlagEnum: string
 {
     use IterableEnum;
-    case Tax;
-    case Amount;
-    case Count;
+    case Tax = 'Tax';
+    case Amount = 'Amount';
+    case Count = 'Count';
 }

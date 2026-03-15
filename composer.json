@@ -13,6 +13,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "mvanduijker/laravel-mercure-broadcaster": "^3.8",
+        "spatie/laravel-data": "^4.20",
         "tymon/jwt-auth": "^2.2"
     },
     "require-dev": {

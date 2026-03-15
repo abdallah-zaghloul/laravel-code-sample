@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('flag')->nullable();
             $table->set('flags_set', FlagEnum::values())->nullable();
             $table->json('flags_json')->nullable();
+            $table->json('products')->nullable();
             $table->timestamps();
         });
 
